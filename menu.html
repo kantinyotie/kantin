@@ -756,7 +756,8 @@ checkoutButton.addEventListener("click", () => {
   if (total > 0) {
     alert(`Terima kasih! Total pembayaran anda adalah Rp ${total.toLocaleString()}`);
     localStorage.setItem("total", total); // Simpan total ke localStorage
-    window.location.href = "pesan.html"; // Ganti URL dengan tujuan
+    document.getElementById('checkout-button').addEventListener('click', () => {
+        window.location.href = 'pesan.html';
   } else {
     alert("Silahkan pilih pesanan terlebih dahulu!");
   }
