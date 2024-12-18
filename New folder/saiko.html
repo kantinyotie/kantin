@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu</title>
+    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="responsive.css">
+
+    <style>
+      
+ body 
+
+    {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+         display: flex;
+            align-items: center;
+            padding: 38px 30px;
+            background-color: #333;
+            position: relative;
+        }
+
+        .navbar img {
+              height: 140px; /* Sesuaikan ukuran logo */
+            cursor: pointer;
+            position: absolute;
+            top: -15px; /* Membuat logo keluar dari navbar */
+            left: 130px;
+            z-index: 10; 
+               
+        }
+
+        .navbar .menu {
+            margin-left: auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar .menu a:hover {
+            text-decoration: underline;
+        }
+      body
+      
+      {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .slider-container {
+        position: relative;
+        width: 100%;
+        max-height: 550px;
+        overflow: hidden;
+      }
+
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+        min-width: 100%;
+        height: 500px;
+        position: relative;
+      }
+      
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+
+      .slider-controls {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(-50%);
+      }
+
+      .slider-controls button {
+   background-color: rgba(255, 255, 255, 0.2); /* Transparan */
+  color: white; /* Panah berwarna putih */
+  border: 2px solid white; /* Batasan putih */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      @media (max-width: 480px) {
+  .slider-controls button {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+}
+
+      .slider-controls button:hover {
+        background-color: rgba(255, 255, 255, 0.5); /* Transparansi lebih jelas saat hover */
+  transform: scale(1.1);
+      }
+
+      .indicators {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+      }
+
+      .indicators button {
+        width: 12px;
+        height: 12px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .indicators button.active {
+        background-color: white;
+      }
+      body  {
+  font-family: 'Chewy', cursive;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+              url('https://source.unsplash.com/1600x900/?food') no-repeat center center/cover;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  position: relative;
+}
+
+      /* Subtle overlay for text readability */
+      body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+      }
+
+      .menu-container {
+    background-image:url(niro_ipietra_gip01_borgogna_white_matt_60_x_60-7e48f-3289_2821-twebp80.jpeg);
+    border-radius: 10px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+   
+      }
+
+      .message  {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #388e3c;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-family: 'Chewy', cursive;
+  }
+
+      .section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+
+
+}
+
+@media (max-width: 768px) {
+  .section {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di layar kecil */
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    grid-template-columns: 1fr; /* 1 kolom di layar sangat kecil */
+  }
+}
+
+      .section-title {
+         font-size: 26px;
+  font-weight: bold;
+  color: #388e3c;
+  margin-bottom: 15px;
+  text-align: center;
+  text-decoration: underline;
+  grid-column: span 3;
+  font-family: 'Chewy', cursive;
+      }
+
+      .menu-item {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 16px;
+        border-radius: 100px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+ border: 2px solid #388e3c; /* Add a thin green border */
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: "Roboto", sans-serif;
+        
+      }
+
+      .menu-item:hover {
+        transform: scale(1.05); /* Scale the item slightly */
+        box-shadow: 0 20px 16px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
+        background-color: #c8e6c9; /* Light green background on hover */
+      }
+
+      .menu-image {
+        width: 120px;
+        height: 120px;
+        background: transparent;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-bottom: 12px;
+        transition: transform 0.3s ease; /* Smooth transition */
+      }
+
+      .menu-image:hover {
+        transform: translateY(-10px); /* Move the image up when hovered */
+      }
+
+      .menu-details {
+        flex: 1;
+        margin-left: 16px;
+      }
+
+      .menu-title {
+      font-size: 1.2em;
+    margin: 10px 0;
+  color: #388e3c;
+  margin: -10%;
+  align-items: center;
+
+
+      }
+
+      .menu-price {
+        color: #555;
+        font-size: 16px;
+        align-items: center;
+      }
+
+      .menu-actions {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+      }
+
+      .menu-actions button {
+        border: none;
+        padding: 8px 12px;
+        margin: 0 4px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      .menu-actions .increase {
+        background: #66bb6a; /* Green button */
+        color: #fff;
+      }
+
+      .menu-actions .increase:hover {
+        background: #388e3c; /* Darker green on hover */
+        transform: scale(1.1);
+      }
+
+      .menu-actions .decrease {
+        background: #f44336; /* Red button */
+        color: #fff;
+      }
+
+      .menu-actions .decrease:hover {
+        background: #e53935;
+        transform: scale(1.1);
+      }
+
+      .menu-actions button:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+      }
+
+      .total {
+        text-align: right;
+        font-size: 22px;
+        margin-top: 20px;
+        color: #388e3c;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+              font-size: 1.2em;
+
+      }
+
+        hr.green-line {
+            border: none; /* Hilangkan border default */
+            height: 3px; /* Ketebalan garis */
+            background-color: #28a745; /* Warna hijau */
+            margin: 20px 0; /* Spasi atas dan bawah */
+            width: 100%; /* Lebar garis 100% */
+        }
+
+
+      .checkout-buttons {
+        display: flex;
+        gap: 10px; /* Adds a small space between the buttons */
+        align-items: center; /* Centers the buttons vertically */
+        justify-content: flex-end; /* Aligns buttons to the right side */
+        margin-top: 20px;
+      }
+
+      .checkout-buttons button {
+        padding: 10px 15px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      .checkout-buttons .checkout {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .checkout-buttons .checkout:hover {
+        background-color: #388e3c;
+        transform: scale(1.05);
+      }
+
+      .checkout-buttons .reset {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .checkout-buttons .reset:hover {
+        background-color: #e53935;
+        transform: scale(1.05);
+      }
+
+      /* Footer Styling */
+      .footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 30px;
+      }
+
+      .footer-content p {
+         font-family: 'Chewy', cursive;
+        font-size: 14px;
+        margin: 5px 0;
+      }
+
+      .footer-content a {
+        color: #66bb6a;
+        text-decoration: none;
+      }
+
+      .footer-content a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+       <img src="logo.png">
+      </div>
+    </div>
+
+    <!-- Slider Container -->
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide">
+          <img
+            src="banner  2.jpg"
+            alt="Slide 1"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="banner 1.jpg"
+            alt="Slide 2"
+          />
+        </div>
+        <div class="slide">
+          <img src="IMG-20241213-WA0062.jpg" alt="Slide 3" />
+        </div>
+      </div>
+      <!-- Controls -->
+      <div class="slider-controls">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+      <!-- Indicators -->
+      <div class="indicators"></div>
+    </div>
+
+    <div class="menu-container">
+      <!-- Message -->
+      <div class="message">Silahkan pilih pesanan anda</div>
+
+      <!-- Makanan Section -->
+      <div class="section">
+        <div class="section-title">Makanan</div>
+
+        <!-- lada hitam -->
+        <div class="menu-item" data-price="10000">
+          <img
+            src="ayam lada hitam.jpg"
+            alt="Ayam lada hitam"
+            class="menu-image"
+          />
+          <div class="menu-details">
+          <h3>  <div class="menu-title">Ayam lada hitam</div></h3>
+            <div class="menu-price">Harga: Rp 10,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+        <!-- Ayam Geprek -->
+        <div class="menu-item" data-price="10000">
+          <img
+            src="geprek + soto.jpg"
+            alt="Ayam Geprek"
+            class="menu-image"
+          />
+          <div class="menu-details">
+            <h3><div class="menu-title">Ayam Geprek</div></h3>
+            <div class="menu-price">Harga: Rp 10,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+        <!-- Ayam Lada Hitam -->
+        <div class="menu-item" data-price="12000">
+          <img
+            src="geprek lada hitam.jpg"
+            alt="Ayam Lada Hitam"
+            class="menu-image"
+          />
+          <div class="menu-details">
+            <h3><div class="menu-title">Ayam Geprek Tahu</div></h3>
+            <div class="menu-price">Harga: Rp 12,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minuman Section -->
+      <div class="section">
+        <div class="section-title">Minuman</div>
+
+        <!-- Es Kopi -->
+        <div class="menu-item" data-price="3000">
+          <img src="copucino.jpg" alt="Es Kopi" class="menu-image" />
+          <div class="menu-details">
+            <h3><div class="menu-title">Es Kopi</div></h3>
+            <div class="menu-price">Harga: Rp 3,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+        <!-- Es Teh -->
+        <div class="menu-item" data-price="5000">
+          <img
+            src="es beng beng.jpg"
+            alt="Es Chocolatos"
+            class="menu-image"
+          />
+          <div class="menu-details">
+            <h3><div class="menu-title">Es Chocolatos</div></h3>
+            <div class="menu-price">Harga: Rp 5,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+        <!-- Es Jeruk Peras -->
+        <div class="menu-item" data-price="5000">
+          <img
+            src="es jeruk.jpg"
+            alt="Es Jeruk Peras"
+            class="menu-image"
+          />
+          <div class="menu-details">
+            <h3><div class="menu-title">Es Jeruk Peras</div></h3>
+            <div class="menu-price">Harga: Rp 5,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+        <!-- Es Tawar -->
+        <div class="menu-item" data-price="1000">
+          <img
+            src="es tawar.jpg"
+            alt="Es Tawar"
+            class="menu-image">
+          <div class="menu-details">
+           <h3> <div class="menu-title">Es Tawar</div></h3>
+            <div class="menu-price">Harga: Rp 1,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+        <!-- Drink Beng-Beng -->
+        <div class="menu-item" data-price="5000">
+          <img
+            src="es beng beng.jpg"
+            alt="Drink Beng-Beng"
+            class="menu-image">
+          <div class="menu-details">
+           <h3><div class="menu-title">Drink Beng-Beng</div></h3>
+            <div class="menu-price">Harga: Rp 5,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Total Harga -->
+      <div class="total">Total: Rp 0</div>
+
+      <!-- Checkout and Reset Buttons -->
+      <div class="checkout-buttons">
+       
+        <button class="reset">Reset</button>
+      </div>
+    </div>
+
+    <script>
+      const slider = document.querySelector(".slider");
+      const slides = document.querySelectorAll(".slide");
+      const prevButton = document.querySelector(".prev");
+      const nextButton = document.querySelector(".next");
+      const indicatorsContainer = document.querySelector(".indicators");
+
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      // Create indicators
+      slides.forEach((_, index) => {
+        const indicator = document.createElement("button");
+        if (index === 0) indicator.classList.add("active");
+        indicator.addEventListener("click", () => goToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+      });
+
+      const indicators = document.querySelectorAll(".indicators button");
+
+      function updateIndicators() {
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle("active", index === currentIndex);
+        });
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        updateIndicators();
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        goToSlide(currentIndex);
+      }
+
+      nextButton.addEventListener("click", nextSlide);
+      prevButton.addEventListener("click", prevSlide);
+
+      // Auto-slide every 5 seconds
+      setInterval(nextSlide, 5000);
+
+      const items = document.querySelectorAll(".menu-item");
+      const totalElement = document.querySelector(".total");
+      const checkoutButton = document.querySelector(".checkout");
+      const resetButton = document.querySelector(".reset");
+      let total = 0;
+
+      items.forEach((item) => {
+        const increaseButton = item.querySelector(".increase");
+        const decreaseButton = item.querySelector(".decrease");
+        const quantityElement = item.querySelector(".quantity");
+        const price = parseInt(item.getAttribute("data-price"));
+
+        increaseButton.addEventListener("click", () => {
+          let quantity = parseInt(quantityElement.textContent);
+          quantity++;
+          quantityElement.textContent = quantity;
+          decreaseButton.disabled = false;
+          total += price;
+          totalElement.textContent = `Total: Rp ${total.toLocaleString()}`;
+        });
+
+        decreaseButton.addEventListener("click", () => {
+          let quantity = parseInt(quantityElement.textContent);
+          if (quantity > 0) {
+            quantity--;
+            quantityElement.textContent = quantity;
+            total -= price;
+            totalElement.textContent = `Total: Rp ${total.toLocaleString()}`;
+            if (quantity === 0) {
+              decreaseButton.disabled = true;
+            }
+          }
+        });
+      });
+
+      // Checkout functionality
+      checkoutButton.addEventListener("click", () => {
+        alert(`Checkout successful! Total: Rp ${total.toLocaleString()}`);
+      });
+
+      // Reset functionality
+      resetButton.addEventListener("click", () => {
+        total = 0;
+        totalElement.textContent = `Total: Rp 0`;
+        items.forEach((item) => {
+          const quantityElement = item.querySelector(".quantity");
+          const decreaseButton = item.querySelector(".decrease");
+          quantityElement.textContent = "0";
+          decreaseButton.disabled = true;
+        });
+      });
+    </script>
+    <!-- Footer Section -->
+    <div class="footer">
+      <div class="footer-content">
+        <p>
+          &copy; 2024 warung.com by Mahasiswa politeknik sriwijaya. All rights
+          reserved.
+        </p>
+        <p>Alamat:di depan gendung MI d4 politeknik sriwijaya sungai sahang</p>
+        <p>Operating hours: 24 Hours</p>
+        <p>Telephone: 082376313176</p>
+        <p>Email: <a href="mailto:Kelompok_3_LP.com">Kelompok_3_LP</a></p>
+        <p>
+          Visit our
+          <a href="https://wa.me/6285896474836" target="_blank">Whatsup</a> for
+          more details.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
