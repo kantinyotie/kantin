@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+
+    <!-- Linking SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- Mengimpor font 'More Sugar' dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=More+Sugar&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        background-color: #d7ebd8;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Style untuk tombol kedua (Contact) */
+      .nav-item:nth-child(2) .nav-link {
+        background-color: #32693a; /* Hijau untuk tombol kedua */
+        color: white; /* Teks menjadi putih */
+        border-radius: 5px; /* Memberikan radius pada tombol untuk tampilan lebih halus */
+      }
+
+      nav {
+        background-color: #427249;
+        padding: 10px;
+      }
+
+      .nav-link {
+        color: #32693a;
+      }
+
+      .nav-link.disabled {
+        color: #417248;
+      }
+
+      h1 {
+        text-align: center;
+        color: #417248; /* Warna hijau untuk judul */
+        margin-top: 27px;
+        font-size: 30px; /* Ukuran font besar untuk judul */
+        font-weight: bold; /* Membuat font tebal */
+      }
+
+      /* Mengatur agar navbar berada di tengah */
+      .nav-tabs {
+        justify-content: center; /* Menyusun item navbar di tengah */
+        text-align: center; /* Menyelaraskan teks di dalam item navbar */
+      }
+
+      /* Style tambahan untuk item navbar */
+      .nav-item {
+        margin: 0 10px; /* Memberikan jarak antar item navbar */
+      }
+
+      /* Warna aktif untuk nav-link (Hijau saat aktif) */
+      .nav-link.active {
+        background-color: #32693a; /* Hijau untuk link aktif */
+        color: white; /* Teks berwarna putih saat aktif */
+      }
+
+      /* Warna hover pada nav-link */
+      .nav-link:hover {
+        background-color: #236323; /* Hijau lebih gelap saat hover */
+        color: white;
+      }
+
+      /* Style untuk Card */
+  .contact-card {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 900px; /* Menambahkan lebar maksimum */
+    width: 100%; /* Agar card bisa mengisi lebar layar */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Style untuk Icon dalam Card */
+  .contact-icon {
+    width: 50px; /* Ukuran icon gambar */
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px; /* Ukuran font icon */
+    margin-right: 9px; /* Jarak antara icon dan teks */
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  /* Style untuk Teks dalam Card */
+  .contact-card .flex-1 {
+    font-size: 13px; /* Ukuran font teks */
+    color: #333;
+    margin-top: 12px;
+  }
+
+  /* Style untuk Button */
+  .contact-card button {
+    font-size: 12px; /* Ukuran font button */
+    background-color: #32693a; /* Warna latar belakang tombol */
+    color: white;
+    padding: 6px 8px; /* Padding tombol */
+    border-radius: 5px; /* Sudut tombol melengkung */
+    border: none;
+    cursor: pointer;
+    margin-top: 16px;
+  }
+
+  /* Mengubah warna tombol saat hover */
+  .contact-card button:hover {
+    background-color: #84b884; /* Warna lebih gelap saat hover */
+  }
+
+
+      .keterangan {
+            text-align: center;
+            margin-top: 10px; /* Mengurangi jarak antara jam operasional dan judul */
+            font-size: 20px;
+            margin-bottom: 4px;
+            color: #32693a; /* Warna hijau untuk jam buka */
+        }
+
+         /* Mengatur ukuran navbar */
+         .nav {
+            font-size: 15px; /* Memperkecil ukuran font */
+            padding: 5px 10px; /* Memperkecil padding navbar */
+        }
+    
+        /* Mengatur ukuran nav-link */
+        .nav-link {
+            padding: 5px 10px; /* Memperkecil padding nav-link */
+        }
+    
+        /* Mengatur ukuran nav-item */
+        .nav-item {
+            margin: 0 5px; /* Memperkecil margin antar item navbar */
+        }
+
+
+      /* Responsiveness: when the screen is smaller (mobile view) */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 20px; /* Smaller font size for mobile */
+        }
+        .keterangan {
+                font-size: 15px; /* Smaller font size for mobile */
+                margin-top: 15px;
+            }
+
+
+        .contact-card {
+          padding: -px; /* Smaller padding for cards */
+
+        }
+
+        .contact-icon {
+          width: 48px;
+          height: 48px;
+          font-size: 20px; /* Smaller icon size */
+        }
+
+        .contact-card .flex-1 {
+          margin-left: 10px;
+        }
+
+        .d-flex {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+
+        .contact-card .d-flex {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .contact-icon img {
+          max-width: 40px;
+          height: auto;
+        }
+        
+        .nav-tabs {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .nav-item {
+                margin: 0 5px; /* Reduce margin between navbar items on mobile */
+            }
+        }
+        .nav {
+                font-size: 11px; /* Memperkecil ukuran font pada perangkat kecil */
+            }
+    
+            .nav-link {
+                padding: 4px 8px; /* Memperkecil padding pada perangkat kecil */
+            }
+          
+    </style>
+  </head>
+  <body>
+    
+    <!-- Navbar -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="home web.html" id="homeLink">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="kontak.html" id="contactLink">Contact & Location</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="memories.html" id="memoriesLink">Memories</a>
+      </li>
+    </ul>
+
+    <h1 style="text-align: center; color: #417248; font-family: 'Clarendon Blk BT', sans-serif;">
+      LOKASI & MEDIA SOSIAL</h1>
+
+      <div class="keterangan" style="text-align: center; margin-top: 10px;">
+        <p><strong>Informasi Order Katering</strong></p>
+    </div>
+    
+   
+
+      <!-- Contact Section -->
+      <!-- Contact Card 1 (Phone and Email) -->
+      <div class="contact-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="contact-icon">
+            <img src="foto/lokasi.jpeg" class="contact-icon" alt="warung">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="flex-1 ml-4">
+            <div><strong>Address:</strong> Jalan Sungai Sahang</div>
+          </div>
+          <!-- Get Directions Button -->
+          <a href="https://maps.app.goo.gl/891UfazDGhcgDKyw6" target="_blank">
+            <button class="bg-blue-500 text-green px-4 py-2 rounded">Get Directions</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Card 2 (Phone and WhatsApp) -->
+      <div class="contact-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="contact-icon">
+            <img src="foto/wa.jpeg" class="contact-icon" alt="warung">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="flex-1 ml-4">
+            <div><strong>Phone/WhatsApp:</strong> +62 823 7631 3176</div>
+          </div>
+          <!-- Send Message Button -->
+          <a href="https://wa.link/irdvue">
+            <button class="bg-blue-500 text-green px-4 py-2 rounded">Send Message</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Card 3 (Instagram) -->
+      <div class="contact-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="contact-icon">
+            <img src="foto/ig.jpeg" class="contact-icon" alt="warung">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="flex-1 ml-4">
+            <div><strong>Instagram:</strong> @patrioti</div>
+          </div>
+          <!-- Send Message Button -->
+          <a href="https://www.instagram.com/patrioti.16/profilecard/?igsh=OWgwaTg1eHVvMDVj">
+            <button class="bg-blue-500 text-green px-4 py-2 rounded">Send Message</button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Card 4 (Facebook) -->
+      <div class="contact-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="contact-icon">
+            <img src="foto/fb.jpeg" class="contact-icon" alt="warung">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="flex-1 ml-4">
+            <div><strong>Facebook:</strong> patriotiyoti</div>
+          </div>
+          <!-- Send Message Button -->
+          <a href="https://www.facebook.com/share/qde5vkPyJUuc8XiH/" target="_blank">
+            <button class="bg-blue-500 text-green px-4 py-2 rounded">Send Message</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </body>
+</html>
