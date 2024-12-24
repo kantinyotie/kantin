@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
     <link rel="icon" href="logoo.ico">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,43 +21,32 @@
       body {
         margin: 0;
         font-family: FlameBold;
-      }
-/* Cart Icon Styling */
-.cart {
 
+      }.cart {
   position: absolute;
-  right: 200px; /* Posisi ikon di sebelah kanan */
+  right: 20px; /* Adjusted for smaller screens */
   top: 1.9%;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   cursor: pointer;
-
 }
 
 .cart-icon {
-  width: 50px; /* Ukuran ikon */
+  width: 50px; /* Icon size for desktop */
   height: auto;
- 
 }
 
 .cart-wrapper {
-
-  flex: 0 0 auto; /* Tidak membesar ke kiri-kanan */
+  flex: 0 0 auto;
   display: flex; 
-  align-items: center; /* Pusatkan ikon secara vertikal */
-  height: 100%; /* Penuhi tinggi container */
-}
-
-/* Gambar ikon */
-.cart-icon {
-  width: 50px; /* Atur lebar gambar */
-  height: auto; /* Biarkan proporsi gambar */
+  align-items: center;
+  height: 100%;
 }
 
 .cart-badge {
-  background-color: rgb(0, 255, 21); /* Warna badge */
-  color: rgb(0, 255, 8);
+  background-color: rgb(51, 53, 51);
+  color: rgb(51, 53, 51);
   border-radius: 50%;
   font-weight: bold;
   width: 20px;
@@ -67,8 +56,28 @@
   align-items: center;
   position: absolute;
   top: -100px;
-  right: -3px; /* Posisi badge di sudut kanan atas ikon */
+  right: -3px;
 }
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .cart {
+    right: 10px; /* Adjust the position further for smaller screens */
+    top: 2.5%; /* Slightly adjust top for mobile */
+  }
+
+  .cart-icon {
+    width: 40px; /* Smaller icon size for mobile */
+  }
+
+  .cart-badge {
+    width: 15px; /* Smaller badge for mobile */
+    height: 15px; /* Adjust height accordingly */
+    top: -10px; /* Adjust badge position for mobile */
+    right: -2px; /* Slightly adjust badge position */
+  }
+}
+
 
       .navbar {
         display: flex;
@@ -157,9 +166,9 @@
 
       @media (max-width: 600px) {
         .slider-controls button {
-          width: 60px;
-          height: 60px;
-          font-size: 28px;
+          width: 55px;
+          height: 55px;
+          font-size: 25px;
         }
       }
 
@@ -240,6 +249,18 @@
         font-family: FlameBold;
       }
 
+      @media (max-width: 768px){
+        .message {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #388e3c;
+        font-weight: bold;
+
+        font-family: FlameBold;
+      }
+      }
+
       .section {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -272,6 +293,18 @@
         font-family: FlameBold;
       }
 
+      @media (max-width: 768px){
+        .section-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #388e3c;
+        margin-bottom: 15px;
+        text-decoration: underline;
+        text-align:inherit; /* Center the text */
+        margin-left: 4; /* Reset margin-left to avoid left alignment */
+      }
+      }
+
       .menu-item {
         display: flex;
         flex-direction: column;
@@ -287,9 +320,26 @@
         font-family: FlameBold;
       }
 
+      @media(max-width: 768px){
+        .menu-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 3px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid #458638; /* Add a thin green border */
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: FlameBold;
+      }
+      }
+
       .menu-item:hover {
         transform: scale(1.05); /* Scale the item slightly */
-        box-shadow: 0 20px 16px rgba(0, 0, 0, 0.3); /* Add a stronger shadow on hover */
+        box-shadow: 0 20px 16px rgba(17, 16, 16, 0.3); /* Add a stronger shadow on hover */
         background-color: #c8e6c9; /* Light green background on hover */
       }
 
@@ -303,13 +353,24 @@
         transition: transform 0.3s ease; /* Smooth transition */
       }
 
+      @media(max-width: 768px){
+        .menu-image {
+        width: 95;
+        height: 50;
+        border-radius: 17px;
+        object-fit: fill;
+        margin-bottom: 14px;
+        transition: transform 0.3s ease; /* Smooth transition */
+      }
+      }
+
       .menu-image:hover {
         transform: translateY(-10px); /* Move the image up when hovered */
       }
 
       .menu-details {
-        flex: 1;
-        margin-left: 16px;
+        flex: 8;
+        margin-left: 10px;
       }
 
       .menu-title {
@@ -325,6 +386,23 @@
         font-size: 16px;
         align-items: center;
       }
+
+      @media(max-width: 768px){
+        .menu-title {
+        font-size: 0.99em;
+        margin: 5px 0;
+        color: #388e3c;
+        margin: -10%;
+        align-items: center;
+        text-align: center;
+      }
+
+      .menu-price {
+        color: #555;
+        font-size: 13px;
+        align-items: center;
+      }
+    }
 
       .menu-actions {
         display: flex;
@@ -372,6 +450,16 @@
         margin-top: 20px;
         color: #388e3c;
 
+      }
+
+      @media(max-width:768px){
+        .total {
+        text-align: right;
+        font-size: 30px;
+        margin-top: 20px;
+        color: #388e3c;
+
+      }
       }
 
       hr.green-line {
@@ -443,13 +531,66 @@
       .footer-content a:hover {
         text-decoration: underline;
       }
+
+      .logo img {
+  width: 150px; /* Set the logo size */
+  height: auto;
+}
+
+.slider-container{
+    width: 90%;
+}
+
+
+  .logo img {
+    width: 110px; /* Reduce logo size on mobile */
+    margin-left: -110px;
+  }
+
+.slider-container{
+    width: 100%;
+    height: 500px; /* Menambahkan satuan px pada height */
+}
+.slider-container {
+  width: 100%; /* Ensure the slider takes up the full width of its container */
+  overflow: hidden; /* Hide overflowing content to maintain the slider layout */
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition for sliding effect */
+}
+
+.slide {
+  min-width: 100%; /* Ensure each slide takes the full width of the container */
+  flex: 0 0 auto; /* Prevent slides from shrinking or growing */
+}
+
+.slider img {
+  width: 100%; /* Ensure images scale to the full width of their container */
+  height: 100; /* Maintain aspect ratio of the images */
+}
+
+@media(max-width: 768px){
+.slider-container{
+    width: 100%;
+    height: 270px
+
+}
+
+.slider img {
+  width: 477px; /* Ensure images scale to the full width of their container */
+  height: 280px; /* Maintain aspect ratio of the images */
+}
+}
+
     </style>
 
   </head>
   <body>
 
     <div class="navbar">
-      <div class="logo">
+      <div class="logo" style="margin-left: 10px;">
         <img src="logo.png" />
       </div>
     </div>
