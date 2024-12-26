@@ -5,29 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <style>
-        /* Your previous CSS styles */
+        /* Green Theme CSS */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #d4f8d4; /* Light green background */
         }
 
         .checkout-container {
             width: 90%;
             max-width: 1200px;
             margin: 20px auto;
-            background-color: #fff;
+            background-color: #f0fff0; /* Very light green */
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .header h2 {
+            margin: 0;
+            color: #1f4f1f;
         }
 
         .product {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #c1e6c1; /* Soft green border */
             padding-bottom: 15px;
         }
 
@@ -46,17 +64,18 @@
         .product-details h3 {
             margin: 0 0 5px;
             font-size: 18px;
+            color: #2d572d; /* Dark green text */
         }
 
         .product-details p {
             margin: 0;
-            color: #666;
+            color: #4c704c; /* Medium green text */
         }
 
         .product-price {
             font-weight: bold;
             font-size: 16px;
-            color: #333;
+            color: #1f4f1f; /* Strong green */
         }
 
         .total-section {
@@ -64,13 +83,14 @@
             text-align: right;
             font-size: 18px;
             font-weight: bold;
+            color: #184d18; /* Darker green */
         }
 
         .checkout-button {
             margin-top: 20px;
             width: 100%;
             padding: 15px;
-            background-color: #28a745;
+            background-color: #28a745; /* Green button */
             color: #fff;
             font-size: 16px;
             border: none;
@@ -80,24 +100,28 @@
         }
 
         .checkout-button:hover {
-            background-color: #218838;
+            background-color: #218838; /* Darker green on hover */
         }
     </style>
 </head>
 <body>
     <div class="checkout-container">
-        <h2>Checkout</h2>
+        <!-- Header Section -->
+        <div class="header">
+            <img src="kantin/Merah Krem Lingkaran Siomay Logo (1).png" alt="Logo">
+            <h2>Checkout</h2>
+        </div>
 
         <!-- Product List -->
         <div id="cart-items"></div>
 
         <!-- Total Section -->
         <div class="total-section">
-            Total: $<span id="cart-total">0</span>
+            Total: IDR <span id="cart-total">0</span>
         </div>
 
         <!-- Checkout Button -->
-        <button class="checkout-button">Proceed to Payment</button>
+        <button class="checkout-button" onclick="proceedToPayment()">Lanjut ke pembayaran</button>
     </div>
 
     <script>
@@ -125,7 +149,7 @@
 
                 let productPrice = document.createElement('span');
                 productPrice.classList.add('product-price');
-                productPrice.textContent = `$${item.price}`;
+                productPrice.textContent = `IDR ${item.price}`;
 
                 detailsDiv.appendChild(productName);
                 detailsDiv.appendChild(productPrice);
@@ -138,6 +162,10 @@
             });
 
             document.getElementById('cart-total').textContent = total;
+        }
+
+        function proceedToPayment() {
+            alert('Pembayaran Berhasil!!');
         }
 
         // Run on page load
