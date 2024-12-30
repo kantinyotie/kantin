@@ -904,26 +904,23 @@ checkoutButton.addEventListener("click", () => {
   }
 });
 
+//point here------------------------------------------------------------------------------
 <script>
-        // Function to record the selected items
-        function recordOrder() {
-            const itemName = document.getElementById('itemName').value;
-            const quantity = document.getElementById('quantity').value;
-            const price = document.getElementById('price').value;
+    function addToCart(itemName, itemPrice) {
+        // Retrieve the existing cart or initialize an empty array
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            // Validate inputs
-            if (!itemName || !quantity || !price) {
-                alert('Please fill out all fields.');
-                return;
-            }
+        // Add the selected item to the cart
+        cart.push({
+            name: itemName,
+            price: itemPrice
+        });
 
-            // Store order details in localStorage
-            const order = { itemName, quantity, price };
-            localStorage.setItem('currentOrder', JSON.stringify(order));
+        // Save the updated cart back to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
 
-            // Navigate to checkout.html
-            window.location.href = 'checkout.html';
-        }
+        alert(`${itemName} has been added to the cart!`);
+    }
 
 </script>
 
