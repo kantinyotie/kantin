@@ -904,24 +904,6 @@ checkoutButton.addEventListener("click", () => {
   }
 });
 
-//point here------------------------------------------------------------------------------
-<script>
-    function addToCart(itemName, itemPrice) {
-        // Retrieve the existing cart or initialize an empty array
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        // Add the selected item to the cart
-        cart.push({
-            name: itemName,
-            price: itemPrice
-        });
-
-        // Save the updated cart back to localStorage
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        alert(`${itemName} has been added to the cart!`);
-    }
-
 </script>
 
     <!-- Footer Section -->
