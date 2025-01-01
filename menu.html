@@ -687,6 +687,100 @@
             <button class="increase">+</button>
           </div>
         </div>
+
+                <!-- Ayam rica-rica -->
+        <div class="menu-item" data-price="10000">
+          <img
+            src="rica-rica.jpg"
+            alt="Ayam Lada Hitam"
+            class="menu-image"
+          />
+          <div class="menu-details">
+            <h3><div class="menu-title">Ayam rica-rica</div></h3>
+            <div class="menu-price">Harga: Rp 10,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+                        <!-- nasi goreng geprek-->
+        <div class="menu-item" data-price="10000">
+          <img
+            src="nasi goreng ayam geprek.jpg"
+            alt="nasi goreng ayam geprek"
+            class="menu-image"
+          />
+          <div class="menu-details">
+            <h3><div class="menu-title">nasi goreng geprek</div></h3>
+            <div class="menu-price">Harga: Rp 10,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+         <!-- ayam lada hitam-->
+        <div class="menu-item" data-price="10000">
+          <img
+            src="ayam lada hitam tanpa nasi.jpg"
+            alt="ayam lada hitam"
+            class="menu-image"
+          />
+          <div class="menu-details">
+            <h3><div class="menu-title">ayam lada hitam</div></h3>
+            <div class="menu-price">Harga: Rp 10,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+        <!-- kwetiau-->
+        <div class="menu-item" data-price="10000">
+          <img
+            src="kwetiau.jpg"
+            alt="kwetiau"
+            class="menu-image"
+          />
+          <div class="menu-details">
+            <h3><div class="menu-title">kwetiau</div></h3>
+            <div class="menu-price">Harga: Rp 10,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+        <!--mie goreng-->
+        <div class="menu-item" data-price="10000">
+          <img
+            src="mie goreng.jpg"
+            alt="mie goreng"
+            class="menu-image"
+          />
+          <div class="menu-details">
+            <h3><div class="menu-title">mie goreng</div></h3>
+            <div class="menu-price">Harga: Rp 10,000</div>
+          </div>
+          <div class="menu-actions">
+            <button class="decrease" disabled>-</button>
+            <span class="quantity">0</span>
+            <button class="increase">+</button>
+          </div>
+        </div>
+
+        
+
+        
       </div>
 
       <!-- Minuman Section -->
@@ -807,7 +901,7 @@
 
   function updateSlider() {
     const translateX = -currentIndex * 100;
-    slider.style.transform = `translateX(${translateX}%)`;
+    slider.style.transform = translateX(${translateX}%);
   }
 
   function updateIndicators() {
@@ -876,7 +970,7 @@ function calculateTotal() {
     const quantity = item.quantity || 0;
     total += price * quantity; // Tambah total
   });
-  totalElement.textContent = `Total: Rp ${total.toLocaleString()}`; // Update tampilan total
+  totalElement.textContent = Total: Rp ${total.toLocaleString()}; // Update tampilan total
 }
 
 // --- Fungsi Reset ---
@@ -896,7 +990,7 @@ resetButton.addEventListener("click", () => {
 // --- Fungsi Checkout ---
 checkoutButton.addEventListener("click", () => {
   if (total > 0) {
-    alert(`Terima kasih! Total pembayaran anda adalah Rp ${total.toLocaleString()}`);
+    alert(Terima kasih! Total pembayaran anda adalah Rp ${total.toLocaleString()});
     localStorage.setItem("total", total); // Simpan total ke localStorage
         window.location.href = 'pesan.html';
   } else {
