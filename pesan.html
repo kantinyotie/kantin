@@ -216,6 +216,46 @@
             color:rgba(240, 255, 240, 0.9);
         }
 
+        .monochrome {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+
+        .monochrome-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: grayscale(100%);
+            z-index: -1; /* Ensures it stays behind other content */
+            transition: filter 0.5s ease;
+        }
+        
+        /* Video Overlay */
+        #video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Ensure it is above all other elements */
+        }
+
+        #video-overlay.hidden {
+            display: none; /* Hide when class 'hidden' is present */
+        }
+
+        #easter-egg-video {
+            width: 80%; /* Adjust as needed for video size */
+            max-height: 90%; /* Prevent the video from exceeding screen height */
+            border: 2px solid white; /* Optional: Border around the video */
+            border-radius: 10px;
+        }
 
     </style>
 </head>
@@ -225,6 +265,14 @@
         <div class="header">
             <img src="Merah Krem Lingkaran Siomay Logo (1).png" alt="Logo">
             <h2>Checkout</h2>
+            <div id="background" class="monochrome-background"></div>
+            <div id="video-overlay" class="hidden">
+            <video id="easter-egg-video" controls autoplay>
+                <source src="WhatsApp Video 2025-01-02 at 00.52.49.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
         </div>
 
         <!-- Note Section-->
@@ -233,7 +281,6 @@
             <textarea id="order-note" placeholder="Tambahkan catatan untuk pesanan Anda..." rows="4"></textarea>
         </div>
         
-
         <!-- Product List -->
         <div id="cart-items"></div>
 
@@ -256,7 +303,7 @@
             <button id="return-home-button" class="return-home-button">Kembali ke Beranda</button>
         </div>
 
-
+        
     <footer>
         <p>&copy; 2024 kantinyotie.github.io by Mahasiswa politeknik sriwijaya. All rights
             reserved.
@@ -310,6 +357,59 @@
         // Redirect to the homepage
         window.location.href = "index.html"; // Replace with your homepage URL
 });
+
+    let easterEggCode = "diveregency";
+    let typedInput = "";
+
+    document.addEventListener("keydown", (event) => {
+        typedInput += event.key.toLowerCase();
+
+        // Check if the last characters match the easter egg code
+        if (typedInput.includes(easterEggCode)) {
+            document.body.classList.add("monochrome"); // Apply to body
+            document.getElementById("background").classList.add("monochrome-background"); // Apply to background
+            alert("Easter Egg Activated: Welcome to Divergency Mode!");
+        }
+
+        // Reset the typedInput to avoid growing indefinitely
+        if (typedInput.length > easterEggCode.length) {
+            typedInput = typedInput.slice(-easterEggCode.length);
+        }
+});
+
+// Easter Egg 2: Typing "KELOMPOK3LP" triggers video playback
+let videoCode = "KELOMPOK3LP";
+let videoTypedInput = "";
+
+document.addEventListener("keydown", (event) => {
+    // Add each key to the videoTypedInput and keep its length equal to the videoCode
+    videoTypedInput += event.key;
+    if (videoTypedInput.length > videoCode.length) {
+        videoTypedInput = videoTypedInput.slice(1);
+    }
+
+    // Check if the videoTypedInput matches the videoCode
+    if (videoTypedInput.toUpperCase() === videoCode) {
+        activateVideoEasterEgg();
+    }
+});
+
+function activateVideoEasterEgg() {
+    const videoOverlay = document.getElementById("video-overlay");
+    const videoElement = document.getElementById("easter-egg-video");
+
+    // Show the video overlay
+    videoOverlay.classList.remove("hidden");
+
+    // Play the video
+    videoElement.play();
+
+    // Hide the overlay when the video ends
+    videoElement.onended = () => {
+        videoOverlay.classList.add("hidden");
+    };
+}
+
 
       </script>
       
