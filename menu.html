@@ -807,7 +807,7 @@
 
   function updateSlider() {
     const translateX = -currentIndex * 100;
-    slider.style.transform = translateX(${translateX}%);
+    slider.style.transform = `translateX(${translateX}%)`;
   }
 
   function updateIndicators() {
@@ -876,7 +876,7 @@ function calculateTotal() {
     const quantity = item.quantity || 0;
     total += price * quantity; // Tambah total
   });
-  totalElement.textContent = Total: Rp ${total.toLocaleString()}; // Update tampilan total
+  totalElement.textContent = `Total: Rp ${total.toLocaleString()}`; // Update tampilan total
 }
 
 // --- Fungsi Reset ---
@@ -896,7 +896,7 @@ resetButton.addEventListener("click", () => {
 // --- Fungsi Checkout ---
 checkoutButton.addEventListener("click", () => {
   if (total > 0) {
-    alert(Terima kasih! Total pembayaran anda adalah Rp ${total.toLocaleString()});
+    alert(`Terima kasih! Total pembayaran anda adalah Rp ${total.toLocaleString()}`);
     localStorage.setItem("total", total); // Simpan total ke localStorage
         window.location.href = 'pesan.html';
   } else {
