@@ -10,14 +10,26 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #d4f8d4; /* Light green background */
+            background: url('pngtree-green-color-abstract-background-vector-image-pngtree-free-image_757320.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3); /* Overlay for readability */
+            z-index: -1;
         }
 
         .checkout-container {
             width: 90%;
             max-width: 1200px;
             margin: 20px auto;
-            background-color: #f0fff0; /* Very light green */
+            background-color: rgba(240, 255, 240, 0.9); /* Semi-transparent light green */
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -26,12 +38,15 @@
         .header {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 20px auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-bottom: 2px solid #c1e6c1;
         }
 
         .header img {
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             object-fit: cover;
             margin-right: 15px;
         }
@@ -78,13 +93,70 @@
             color: #1f4f1f; /* Strong green */
         }
 
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #c1e6c1;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+        }
+
         .total-section {
-            margin-top: 20px;
-            text-align: right;
-            font-size: 18px;
+            margin: 20px auto; /* Center the box horizontally */
+            text-align: right; /* Center the text inside */
+            font-size: 22px; /* Increased font size */
             font-weight: bold;
             color: #184d18; /* Darker green */
+            background: linear-gradient(90deg, #c1f0c1, #a3e4a3); /* Light green gradient */
+            padding: 10px 15px; /* Padding for spacing */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            display: flex;
+            align-items: center;
+            justify-content: right; /* Centers text horizontally */
+            width: 90%; /* Full width of the parent container */
+            max-width: 1200px; /* Prevents it from stretching too wide */
         }
+        
+        .note-section {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column; /* Stack label and textarea */
+            text-align: left; /* Align label to the left */
+            font-size: 16px;
+            color: #1f4f1f; /* Dark green text */
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white background */
+            padding: 10px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+        .note-section label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .note-section textarea {
+            width: 100%;
+            max-width: 96.3%;
+            border: 1px solid #c1e6c1; /* Green border */
+            border-radius: 5px;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            resize: none; /* Prevent resizing */
+        }
+
+
+        .total-section .icon {
+                font-size: 26px;
+                margin-right: 10px; /* Space between icon and text */
+                color: #218838; /* Green matching button hover */
+            }
+
 
         .checkout-button {
             margin-top: 20px;
@@ -96,32 +168,100 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .checkout-button:hover {
             background-color: #218838; /* Darker green on hover */
+            transform: scale(1.05);
         }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #4c704c;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #payment-success {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #1f4f1f; /* Green text for success */
+        }
+
+        #payment-success img {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        .return-home-button {
+            background-color:rgba(240, 255, 240, 0.9); /*First colour*/
+            color: #1f4f1f;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px; /* Adds space between this button and the success message */
+        }
+
+        .return-home-button:hover {
+            background-color: #1f4f1f; /*second colour on hover*/
+            color:rgba(240, 255, 240, 0.9);
+        }
+
+
     </style>
 </head>
 <body>
     <div class="checkout-container">
         <!-- Header Section -->
         <div class="header">
-            <img src="foto/Merah Krem Lingkaran Siomay Logo (1).png" alt="Logo">
+            <img src="Merah Krem Lingkaran Siomay Logo (1).png" alt="Logo">
             <h2>Checkout</h2>
         </div>
+
+        <!-- Note Section-->
+        <div class="note-section">
+            <label for="order-note">Catatan Pesanan:</label>
+            <textarea id="order-note" placeholder="Tambahkan catatan untuk pesanan Anda..." rows="4"></textarea>
+        </div>
+        
 
         <!-- Product List -->
         <div id="cart-items"></div>
 
-        <!-- Total Price -->
-        <div id="total-price"></div>
+        <div class="total-section">
+            <span class="icon"></span>
+            <span id="total-price"></span>
+        </div>
+        
 
         <!-- Checkout Button -->
-        <button class="checkout-button" onclick="proceedToPayment()">Lanjut ke pembayaran</button>
-    </div>
+        <button id="payment-button" class="checkout-button">Lanjut ke Pembayaran</button>
 
+        <!-- Success Message -->
+        <div id="payment-success" class="hidden">
+            <img src="checkmark.gif" alt="Pembayaran Berhasil" />
+            <p>Pembayaran Berhasil! Terima kasih telah memesan.</p>
+        </div>
+        
+        <!-- Return to Homepage Button -->
+            <button id="return-home-button" class="return-home-button">Kembali ke Beranda</button>
+        </div>
+
+
+    <footer>
+        <p>&copy; 2024 kantinyotie.github.io by Mahasiswa politeknik sriwijaya. All rights
+            reserved.
+        </p>
+    </footer>
+    
     <script>
         document.addEventListener("DOMContentLoaded", () => {
   // Retrieve cart and total data from localStorage
@@ -151,10 +291,23 @@
     cartItemsElement.appendChild(itemElement);
   });
 
-  // If no items, display a message
-  if (cart.length === 0) {
-    cartItemsElement.innerHTML = "<p>No items in the cart!</p>";
-  }
+});
+
+    document.getElementById("payment-button").addEventListener("click", () => {
+        // Show alert message
+        alert("Pembayaran Berhasil! Terima kasih telah memesan.");
+
+        // Show success message with GIF
+        const successMessage = document.getElementById("payment-success");
+        successMessage.classList.remove("hidden");
+
+        // Optionally disable the button to prevent multiple clicks
+        document.getElementById("payment-button").disabled = true;
+});
+
+    document.getElementById("return-home-button").addEventListener("click", () => {
+        // Redirect to the homepage
+        window.location.href = "index.html"; // Replace with your homepage URL
 });
 
       </script>
