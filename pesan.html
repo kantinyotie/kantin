@@ -115,61 +115,49 @@
         <!-- Product List -->
         <div id="cart-items"></div>
 
-        <!-- Total Section -->
-        <div class="total-section">
-            Total: IDR <span id="cart-total">0</span>
-        </div>
+        <!-- Total Price -->
+        <div id="total-price"></div>
 
         <!-- Checkout Button -->
         <button class="checkout-button" onclick="proceedToPayment()">Lanjut ke pembayaran</button>
     </div>
 
     <script>
-        function loadCart() {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let cartContainer = document.getElementById('cart-items');
-            let total = 0;
+        document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve cart and total data from localStorage
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let total = parseInt(localStorage.getItem('total')) || 0;
 
-            cartContainer.innerHTML = ''; // Clear previous items
-            cart.forEach(item => {
-                let productDiv = document.createElement('div');
-                productDiv.classList.add('product');
+  // Display total price
+  const totalElement = document.getElementById("total-price");
+  totalElement.textContent = `Total: Rp ${total.toLocaleString()}`;
 
-                // Placeholder image (you can replace this with dynamic images later)
-                let img = document.createElement('img');
-                img.src = "placeholder.jpg";
-                img.alt = item.name;
+  // Display cart items
+  const cartItemsElement = document.getElementById("cart-items");
+  cartItemsElement.innerHTML = ''; // Clear any previous content
 
-                // Product details
-                let detailsDiv = document.createElement('div');
-                detailsDiv.classList.add('product-details');
+  // Loop through cart items and display them
+  cart.forEach(item => {
+    const itemElement = document.createElement("div");
+    itemElement.classList.add("cart-item");
 
-                let productName = document.createElement('h3');
-                productName.textContent = item.name;
+    itemElement.innerHTML = `
+      <p>Name: ${item.name}</p>
+      <p>Price: Rp ${item.price.toLocaleString()}</p>
+      <p>Quantity: ${item.quantity}</p>
+      <p>Total: Rp ${(item.price * item.quantity).toLocaleString()}</p>
+    `;
 
-                let productPrice = document.createElement('span');
-                productPrice.classList.add('product-price');
-                productPrice.textContent = `IDR ${item.price}`;
+    cartItemsElement.appendChild(itemElement);
+  });
 
-                detailsDiv.appendChild(productName);
-                detailsDiv.appendChild(productPrice);
+  // If no items, display a message
+  if (cart.length === 0) {
+    cartItemsElement.innerHTML = "<p>No items in the cart!</p>";
+  }
+});
 
-                productDiv.appendChild(img);
-                productDiv.appendChild(detailsDiv);
-
-                cartContainer.appendChild(productDiv);
-                total += item.price;
-            });
-
-            document.getElementById('cart-total').textContent = total;
-        }
-
-        function proceedToPayment() {
-            alert('Pembayaran Berhasil!!');
-        }
-
-        // Run on page load
-        window.onload = loadCart;
-    </script>
+      </script>
+      
 </body>
 </html>
