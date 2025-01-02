@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"></html>>
+<html lang="en" dir="ltr"></html>
 <head>
     <link rel="icon" href="logoo.ico">
     <meta charset="UTF-8" />
@@ -267,10 +267,10 @@
             <h2>Checkout</h2>
             <div id="background" class="monochrome-background"></div>
             <div id="video-overlay" class="hidden">
-    <video id="easter-egg-video" controls>
-        <source src="WhatsApp Video 2025-01-02 at 00.52.49.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-    </video>
+            <video id="easter-egg-video" controls autoplay>
+                <source src="behindscene.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
         </div>
 
         </div>
@@ -368,7 +368,7 @@
         if (typedInput.includes(easterEggCode)) {
             document.body.classList.add("monochrome"); // Apply to body
             document.getElementById("background").classList.add("monochrome-background"); // Apply to background
-            alert("Easter Egg Activated: Welcome to Divergency Mode!");
+            alert("'So.. it's time to re evaluating your vision.' ");
         }
 
         // Reset the typedInput to avoid growing indefinitely
@@ -398,28 +398,17 @@ function activateVideoEasterEgg() {
     const videoOverlay = document.getElementById("video-overlay");
     const videoElement = document.getElementById("easter-egg-video");
 
-    if (!videoOverlay || !videoElement) {
-        alert("Video overlay or video element not found!");
-        return;
-    }
-
     // Show the video overlay
     videoOverlay.classList.remove("hidden");
-    console.log("Video overlay is now visible.");
 
-    // Play the video programmatically
-    videoElement.play().catch((error) => {
-        console.error("Error playing video:", error);
-        alert("Unable to play the video. Please check your browser settings.");
-    });
+    // Play the video
+    videoElement.play();
 
     // Hide the overlay when the video ends
     videoElement.onended = () => {
-        console.log("Video playback finished.");
         videoOverlay.classList.add("hidden");
     };
 }
-
 
 
       </script>
