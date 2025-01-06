@@ -14,7 +14,6 @@
     <!-- Mengimpor font 'More Sugar' dari Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=More+Sugar&display=swap" rel="stylesheet">
     
-    
     <style>
         body {
             background-color: #d7ebd8;
@@ -24,9 +23,9 @@
         }
 
         .nav-item:first-child .nav-link {
-            background-color: #32693a; /* Hijau untuk tombol pertama */
-            color: white; /* Teks menjadi putih */
-            border-radius: 5px; /* Memberikan radius pada tombol untuk tampilan lebih halus */
+            background-color: #32693a;
+            color: white;
+            border-radius: 5px;
         }
 
         nav {
@@ -38,56 +37,19 @@
             color: #32693a;
         }
 
-        .nav-link.disabled {
+        h1 {
+            text-align: center;
             color: #417248;
-        }
-
-        h1 {
-            text-align: center;
-            color: #417248; /* Warna hijau untuk judul */
             margin-top: 27px;
-            font-size: 30px; /* Ukuran font besar untuk judul */
-            font-weight: bold; /* Membuat font tebal */
+            font-size: 30px;
+            font-weight: bold;
         }
 
-        h1 {
-            text-align: center;
-            color: #a52626; /* Warna hijau untuk judul */
-            margin-top: 10px;
-            font-size: 20px; /* Ukuran font besar untuk judul */
-            font-weight: bold; /* Membuat font tebal */
-        }
-
-        /* Mengatur agar navbar berada di tengah */
-        .nav-tabs {
-            justify-content: center; /* Menyusun item navbar di tengah */
-            text-align: center; /* Menyelaraskan teks di dalam item navbar */
-        }
-
-        /* Style tambahan untuk item navbar */
-        .nav-item {
-            margin: 0 10px; /* Memberikan jarak antar item navbar */
-        }
-
-        /* Warna aktif untuk nav-link */
-        .nav-link.active {
-            background-color: #8ef596; /* Warna biru untuk link aktif */
-            color: white; /* Teks berwarna putih saat aktif */
-        }
-
-        /* Warna hover pada nav-link */
-        .nav-link:hover {
-            background-color: #236323; /* Biru lebih gelap saat hover */
-            color: white;
-        }
-
-    
         .opening-hours {
             text-align: center;
-            margin-top: 10px; /* Mengurangi jarak antara jam operasional dan judul */
+            margin-top: 10px;
             font-size: 12px;
-            margin-bottom: 4px;
-            color: #32693a; /* Warna hijau untuk jam buka */
+            color: #32693a;
         }
 
         .logo {
@@ -97,12 +59,11 @@
             margin-left: auto;
             margin-right: auto;
             margin-top: 5px;
-            margin-top: auto; /* Mengurangi jarak antara logo dan jam operasional */
         }
 
         .order-button {
             text-align: center;
-            margin-top: 9px; /* Mengurangi jarak antara logo dan tombol */
+            margin-top: 9px;
             color: #32693a;
         }
 
@@ -111,72 +72,21 @@
             padding: 15px 30px;
         }
 
-         /* Mengatur ukuran navbar */
-         .nav {
-            font-size: 15px; /* Memperkecil ukuran font */
-            padding: 5px 10px; /* Memperkecil padding navbar */
-        }
-    
-        /* Mengatur ukuran nav-link */
-        .nav-link {
-            padding: 5px 10px; /* Memperkecil padding nav-link */
-        }
-    
-        /* Mengatur ukuran nav-item */
-        .nav-item {
-            margin: 0 5px; /* Memperkecil margin antar item navbar */
-        }
-
         /* Mobile view adjustments */
         @media (max-width: 750px) {
             h1 {
-                font-size: 20px; /* Smaller font size for mobile */
-                margin-top: 30px; /* Adjust title margin for smaller screen */
-            }
-
-            h1 {
-                font-size: 15px; /* Smaller font size for mobile */
-                margin-top: 10px; /* Adjust title margin for smaller screen */
-            }
-
-            .opening-hours {
-                font-size: 11px; /* Smaller font size for mobile */
-                margin-top: 15px;
+                font-size: 20px;
             }
 
             .logo {
-                max-width: 80%; /* Logo takes up more space on smaller screens */
-                margin-top: 5px; /* Adjust logo spacing */
+                max-width: 80%;
             }
 
             .btn-success {
-                font-size: 14px; /* Smaller button size for mobile */
-                padding: 20px 20px;
+                font-size: 14px;
+                padding: 10px 20px;
             }
-
-           
-      .nav-tabs {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      .nav-item {
-        margin: 0 5px;
-        /* Reduce margin between navbar items on mobile */
-      }
-    }
-
-    .nav {
-      font-size: 14px;
-      /* Memperkecil ukuran font pada perangkat kecil */
-    }
-
-    .nav-link {
-      padding: 4px 8px;
-      /* Memperkecil padding pada perangkat kecil */
-    }
-
-
+        }
     </style>
 </head>
 
@@ -190,36 +100,28 @@
             <a class="nav-link" href="kontak.html">Contact & Location</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="memories.html ">Memories</a>
+            <a class="nav-link" href="memories.html">Memories</a>
         </li>
     </ul>
-    
 
     <!-- Judul -->
-    <h1 style="text-align: center; color: #417248;  font-family: 'Clarendon Blk BT', sans-serif;">
-        SELAMAT DATANG DI WEBSITE KANTIN BU YOTIE
-      </h1>
+    <h1>SELAMAT DATANG DI WEBSITE KANTIN BU YOTIE</h1>
 
-      <h1 style="text-align: center; color: #a52626;  font-family: 'Clarendon Blk BT', sans-serif;">
-        WEBSITE HANYA PROTOTYPE!
-      </h1>
+    <!-- Informasi Jam Buka -->
+    <div class="opening-hours">
+        <p><strong>Jam Operasional:</strong></p>
+        <p>Senin - Jumat: 09:00 - 17:00</p>
+        <p>Sabtu - Minggu & Hari Libur: Tutup</p>
+    </div>
 
-      <!-- Informasi Jam Buka -->
-<div class="opening-hours" style="text-align: center; margin-top: 10px;">
-    <p><strong>Jam Operasional:</strong></p>
-    <p>Senin - Jumat: 09:00 - 17:00</p>
-    <p>Sabtu - Minggu & Hari Libur: Tutup</p>
-</div>
+    <!-- Gambar Logo -->
+    <img src="foto/Merah Krem Lingkaran Siomay Logo (1).png" class="img-fluid logo" alt="warung">
 
-<!-- Gambar Logo -->
-<img src="foto/Merah Krem Lingkaran Siomay Logo (1).png" class="img-fluid logo" alt="warung" style="height: auto; display: block; margin-left: auto; margin-right: auto; margin-top: 5px;">
-
-<!-- Tombol -->
-    <a href="menu.html">
-<div style="text-align: center; margin-top: 0; color: #32693a; display: flex; justify-content: center; align-items: center; height: 1px;">
-    <button class="btn btn-success btn-lg" style="max-width: 100%; height: auto; display: block; margin-left: auto; padding: 15px 30px; margin-right: auto;justify-content: center ">Pesan Sekarang</button>
-  </div>
-    </a>
-  
+    <!-- Tombol Pesan Sekarang -->
+    <div style="text-align: center; margin-top: 0; color: #32693a; display: flex; justify-content: center; align-items: center;">
+        <a href="menu.html" class="btn btn-success btn-lg" style="max-width: 100%; padding: 15px 30px; justify-content: center;">
+            Pesan Sekarang
+        </a>
+    </div>
 </body>
 </html>
